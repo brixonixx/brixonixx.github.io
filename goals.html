@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <link rel="stylesheet" href="bricks.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Create a "close" button and append it to each list item
+            var myNodelist = document.getElementsByTagName("LI");
+            for (var i = 0; i < myNodelist.length; i++) {
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+            }
+
+            // Click on a close button to hide the current list item
+            var close = document.getElementsByClassName("close");
+            for (var i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+
+            // Add a "checked" symbol when clicking on a list item
+            var list = document.querySelector('ul');
+            list.addEventListener('click', function (ev) {
+                if (ev.target.tagName === 'LI') {
+                    ev.target.classList.toggle('checked');
+                }
+            }, false);
+        });
+
+        function newgoal() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("goalsInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("goalsUL").appendChild(li);
+            }
+            document.getElementById("goalsInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            // Add close functionality to the new close button
+            span.onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            };
+        }
+    </script>
+</head>
+
+<body class="goalscode">
+    <div class="topnav">
+        <p id="nav1">
+            <a href="bricks.html" class="menu">Home</a>
+            <a href="daily.html" class="menu">Daily</a>
+            <a href="goals.html" class="menu">Goals</a>
+        </p>
+    </div>
+    <div class="checklist">
+        <div id="myDIV" class="header">
+            <h2>Enter a goal</h2>
+
+            <div class="arrange">
+                <input type="text" id="goalsInput" placeholder="Enter new Goal">
+                <span onclick="newgoal()" class="addBtn">Add</span>
+            </div>
+        </div>
+
+        <ul id="goalsUL">
+
+        </ul>
+    </div>
+</body>
+
+</html>

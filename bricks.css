@@ -1,0 +1,386 @@
+/* Overall */
+
+
+
+body {
+  background-color: #171918;
+  color: #f7e6da;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.topnav {
+
+  overflow: hidden;
+  position: relative;
+  padding: 0px;
+  border-top: 0px solid #FFFFFF;
+  margin-top: 0px;
+
+}
+
+.topnav .menu {
+  float: left;
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 12px 5%;
+
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+
+
+.topnav .menu:hover {
+  background-color: #cd3521;
+}
+
+/* bricks.html */
+.running {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
+  margin-bottom: 0;
+}
+
+.pexels {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
+  margin-top: 0;
+  margin-bottom: 0;
+
+
+
+}
+
+.dailydiv {
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.goalsdiv {
+
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+#goalsheader {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  font-size: 2.5vw;
+  
+
+}
+
+#goalstext {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  font-size: 2.5vw;
+  width: 40%;
+  text-align: left;
+}
+
+#dailyheader {
+  position: absolute;
+  right: 20%;
+  top: 20%;
+  font-size: 2.5vw;
+  text-align: left;
+
+}
+
+#dailytext {
+  position: absolute;
+  right: 5%;
+  top: 30%;
+  font-size: 2.5vw;
+  width: 40%;
+  text-align: left;
+}
+
+.learnmore {
+  margin: 0;
+  background: transparent;
+  border-radius: 20px;
+  color: #fff;
+  border: white solid 2px;
+
+  width: 30%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.4em;
+
+}
+
+.learnmore:hover {
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+
+}
+
+
+
+#title {
+  position: absolute;
+  color: transparent;
+  font-size: 15vw;
+  -webkit-text-stroke: 0.5vw white;
+  text-shadow: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0em;
+
+}
+
+.main-content {
+
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+
+.goalscode {
+  box-sizing: border-box;
+
+}
+
+/* goals.html*/
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #cd3521;
+  font-size: 18px;
+  transition: 0.2s;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+ul li:nth-child(odd) {
+  background: #e43821;
+}
+
+
+ul li:hover {
+  background: transparent;
+  border: #cd3521 solid 1px;
+}
+
+
+ul li.checked {
+  background: #008000;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: black;
+}
+
+
+.header {
+  background-color: #171918;
+  padding: 30px 40px;
+  color: #f9f9f9;
+  text-align: center;
+}
+
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* daily.html */
+
+.dailycode {
+width: 100%;
+
+
+}
+
+input {
+  margin: auto;
+  border: none;
+  border-radius: 0;
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #171918;
+  color: #f7e6da;
+  border: #cd3521 1px solid;
+}
+
+
+input::placeholder {
+  color: #cd3521;
+
+
+}
+
+
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #ffe49a;
+  color: #333333;
+
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  color: #cd3521;
+  background-color: #171918;
+  border: #cd3521 solid 1px;
+}
+
+.records {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 2%;
+  
+
+
+}
+
+
+
+.textinput {
+
+  border: #cd3521 1px solid;
+}
+
+.selecttype {
+  border-radius: 3px;
+  border: 0;
+ 
+
+}
+
+#sub {
+  background-color: #ffe49a;
+  width: 20%;
+  border-radius: 5px;
+  height: 20%;
+  border: #ffe49a solid 1px;
+  
+}
+
+#sub:hover {
+  color: #cd3521;
+  background-color: #171918;
+  border: #cd3521 solid 1px;
+  width: 20%;
+  border-radius: 5px;
+  height: 20%;
+
+}
+
+
+
+#workoutTable {
+  color: #f7e6da;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border: 1px solid #cd3521;
+  border-collapse: collapse;
+
+  font-size: 1.6vw;
+
+
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #cd3521;
+}

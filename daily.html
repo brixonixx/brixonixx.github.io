@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <link rel="stylesheet" href="bricks.css">
+    <title>Daily Progress</title>
+</head>
+
+<body class="dailycode">
+    <div class="topnav">
+        <p id="nav1">
+            <a href="bricks.html" class="menu">Home</a>
+            <a href="daily.html" class="menu">Daily</a>
+            <a href="goals.html" class="menu">Goals</a>
+        </p>
+    </div>
+    <div>
+        <form class="records" id="records1">
+            <div>
+                <input type="date" id="date" class="inputbox" placeholder="date" required>
+            </div>
+            <br>
+            <div>
+                <input type="text" id="exercise" class="inputbox" placeholder="Exercise" required>
+            </div>
+            <br>
+            <div>
+                <label for="type">Type:</label>
+                <br>
+                <select id="type" class="selecttype" required>
+                    <option value="duration">Duration</option>
+                    <option value="reps_sets">Reps & Sets</option>
+                </select>
+            </div>
+            <br>
+            <div id="durationInput">
+
+                <input type="number" id="duration" class="inputbox" placeholder="Duration(mins)">
+            </div>
+            <div id="repsSetsInput" style="display: none;">
+                <input type="number" id="reps" class="inputbox" placeholder="Number of Reps">
+                <br>
+                <input type="number" id="sets" class="inputbox" placeholder="Number of Sets">
+                <br>
+                <input type="number" id="weight" class="inputbox" placeholder="Weight(kg)">
+            </div>
+            <br>
+            <button type="submit" id="sub">Add</button>
+        </form>
+    </div>
+    <table id="workoutTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Exercise</th>
+                <th>Duration (minutes) / Reps & Sets</th>
+                <th>Weight (kg)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Workout entries  -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const typeSelect = document.getElementById('type');
+            const durationInput = document.getElementById('durationInput');
+            const repsSetsInput = document.getElementById('repsSetsInput');
+            const weightInput = document.getElementById('weight');
+
+            typeSelect.addEventListener('change', function () {
+                if (typeSelect.value === 'duration') {
+                    durationInput.style.display = 'block';
+                    repsSetsInput.style.display = 'none';
+                    weightInput.value = '';
+                } else {
+                    durationInput.style.display = 'none';
+                    repsSetsInput.style.display = 'block';
+                }
+            });
+
+            document.getElementById('records1').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const date = document.getElementById('date').value;
+                const exercise = document.getElementById('exercise').value;
+                const type = document.getElementById('type').value;
+                let detail;
+                let weight;
+
+                if (type === 'duration') {
+                    const duration = document.getElementById('duration').value;
+                    detail = `${duration} minutes`;
+                    weight = '-';
+                } else {
+                    const reps = document.getElementById('reps').value;
+                    const sets = document.getElementById('sets').value;
+                    detail = `${reps} reps x ${sets} sets`;
+                    weight = document.getElementById('weight').value || '-';
+                }
+
+                const table = document.getElementById('workoutTable').getElementsByTagName('tbody')[0];
+                const newRow = table.insertRow();
+
+                const dateCell = newRow.insertCell(0);
+                const exerciseCell = newRow.insertCell(1);
+                const detailCell = newRow.insertCell(2);
+                const weightCell = newRow.insertCell(3);
+
+                dateCell.textContent = date;
+                exerciseCell.textContent = exercise;
+                detailCell.textContent = detail;
+                weightCell.textContent = weight;
+
+                document.getElementById('records1').reset();
+                durationInput.style.display = 'block';
+                repsSetsInput.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>
