@@ -39,7 +39,7 @@ body {
   background-color: #cd3521;
 }
 
-/* bricks.html */
+/* index.html */
 .running {
   position: relative;
   overflow: hidden;
@@ -91,6 +91,7 @@ body {
   color: white;
   margin-top: 0;
   margin-bottom: 0;
+  padding-top: -19px;
 }
 
 img {
