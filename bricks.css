@@ -71,7 +71,7 @@ body {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  position: absolute;
+
   bottom: 0%;
   padding-bottom: 1%;
   background-color: rgba(0, 0, 0, 0.9);
@@ -93,7 +93,6 @@ body {
 .pexels {
   position: relative;
   overflow: hidden;
-
   min-height: 100%;
   min-width: 100%;
   max-height: 100%;
